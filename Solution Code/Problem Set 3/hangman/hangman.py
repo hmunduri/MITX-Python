@@ -42,7 +42,7 @@ def choose_word(word_list):
     """
     :param word_list: list of words (strings)
 
-    :returns: a word from wordlist at random
+    :returns: a word from word_list at random
     """
     return random.choice(word_list)
 
@@ -81,8 +81,8 @@ def get_guessed_word(secret_word, letters_guessed):
 
 def get_available_letters(letters_guessed):
     """
-    lettersGuessed: list, what letters have been guessed so far
-    returns: string, comprised of letters that represents what letters have not
+    :param letters_guessed: list, what letters have been guessed so far
+    :returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     """
     available_letters = ""
