@@ -1,5 +1,5 @@
 # 6.00.1x
-# Problem Set 7 Test Suite
+# problem_set_07 Test Suite
 import unittest
 import sys 
 from ps7 import *

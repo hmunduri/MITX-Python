@@ -10,7 +10,7 @@ from Tkinter import *
 
 # -----------------------------------------------------------------------
 #
-# Problem Set 7
+# problem_set_07
 
 # ======================
 # Code for retrieving and parsing RSS feeds
