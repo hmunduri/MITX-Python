@@ -15,9 +15,9 @@ solutions for the original version of this course, I will continue
 updating the contents of this repo in order to fit the new version.
 
 ## Problem Set 1
-* **Problem 1:** Counting Vowels
-* **Problem 2:** Counting Bobs
-* **Problem 3:** Longest Alphabetical Ordered Substring
+* [**Problem 1:**][1] Counting Vowels
+* [**Problem 2:**][2] Counting Bobs
+* [**Problem 3:**][3] Longest Alphabetical Ordered Substring
 
 ## Problem Set 2
 * Paying the Minimum
@@ -49,3 +49,7 @@ updating the contents of this repo in order to fit the new version.
 * Problem 4
 * Problem 5
 * Problem 7
+
+[1]: problem_set_01/p_01_counting_vowels.py
+[2]: problem_set_01/p_02_counting_bobs.py
+[3]: problem_set_01/p_03_longest_substring.py
