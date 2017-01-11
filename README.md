@@ -15,9 +15,9 @@ solutions for the original version of this course, I will continue
 updating the contents of this repo in order to fit the new version.
 
 ## Problem Set 1
-* Counting Vowels
-* Counting Bobs
-* Alphabetical Substrings
+* **Problem 1:** Counting Vowels
+* **Problem 2:** Counting Bobs
+* **Problem 3:** Longest Alphabetical Ordered Substring
 
 ## Problem Set 2
 * Paying the Minimum
