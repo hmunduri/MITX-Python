@@ -10,12 +10,12 @@ Number of times bob occurs is: 2
 """
 
 
-def count_bobs(string):
-    keyword = "bob"
-    keyword_length = len(keyword)
+def count_bobs(s: str) -> int:
+    bob = "bob"
+    bob_len = len(bob)
     counter = 0
-    for index in range(len(string) - keyword_length + 1):
-        if string[index:index + keyword_length] == keyword:
+    for i in range(len(s) - bob_len + 1):
+        if s[i:i + bob_len] == bob:
             counter += 1
     return counter
 
