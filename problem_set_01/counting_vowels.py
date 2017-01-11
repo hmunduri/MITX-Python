@@ -11,18 +11,18 @@ Number of vowels: 5
 """
 
 
-def count_vowels(string):
+def count_vowels(s: str) -> int:
     counter = 0
-    for letter in string:
-        if letter in "aeiou":
+    for c in s:
+        if c in 'aeiou':
             counter += 1
     return counter
 
 
 def main():
-    s = input("Enter a string: ")
-    print("Number of vowels: " + str(count_vowels(s)))
+    s = input('Enter a string: ')
+    print('Number of vowels:', str(count_vowels(s)))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
