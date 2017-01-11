@@ -8,6 +8,10 @@ Valid vowels are: 'a', 'e', 'i', 'o', and 'u'.
 For example, if s = 'azcbobobegghakl', your program should print:
 
 Number of vowels: 5
+
+Two possible solutions are provided. The former 'count_vowels' is a solution
+that uses a for loop. The latter 'count_vowels_comprehension' uses a Python
+feature called comprehension which use widely used between Pythonistas.
 """
 
 
@@ -22,7 +26,7 @@ def count_vowels_comprehension(s: str) -> int:
     return len([v for v in s if v in 'aeiou'])
 
 
-def main():
+def main() -> None:
     s = input('Enter a string: ')
     print('Number of vowels:', str(count_vowels(s)))
     print('Number of vowels (using comprehension):', str(count_vowels_comprehension(s)))
