@@ -8,6 +8,7 @@ exam by your own, and only use these solutions as a guide in case of
 having trouble.
 
 **Update**
+
 In January 2017, the contents of this course were updated to support
 Python 3. I am very glad they improved this course since the future of
 Python is Python 3 (at least for now). Though I originally provided
