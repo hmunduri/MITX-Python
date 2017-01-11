@@ -11,7 +11,7 @@ Number of times bob occurs is: 2
 
 
 def count_bobs(s: str) -> int:
-    bob = "bob"
+    bob = 'bob'
     bob_len = len(bob)
     counter = 0
     for i in range(len(s) - bob_len + 1):
@@ -21,9 +21,9 @@ def count_bobs(s: str) -> int:
 
 
 def main():
-    s = input("Enter a string: ")
-    print("Number of times bob occurs is: " + str(count_bobs(s)))
+    s = input('Enter a string: ')
+    print('Number of times bob occurs is:', str(count_bobs(s)))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
