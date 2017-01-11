@@ -18,10 +18,14 @@ def count_vowels(s: str) -> int:
             counter += 1
     return counter
 
+def count_vowels_comprehension(s: str) -> int:
+    return len([v for v in s if v in 'aeiou'])
+
 
 def main():
     s = input('Enter a string: ')
     print('Number of vowels:', str(count_vowels(s)))
+    print('Number of vowels (using comprehension):', str(count_vowels_comprehension(s)))
 
 
 if __name__ == '__main__':
