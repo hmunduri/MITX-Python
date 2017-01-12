@@ -15,21 +15,22 @@ Longest substring in alphabetical order is: abc
 """
 
 
-def obtain_longest_substring(string):
-    current_substring = longest_substring = string[0]
-    for letter in string[1:]:
-        if letter >= current_substring[-1]:
-            current_substring += letter
-            if len(current_substring) > len(longest_substring):
-                longest_substring = current_substring
+def get_longest_substring(s: str) -> str:
+    longest = current = s[0]
+    for c in s[1:]:
+        if c >= current[-1]:
+            current += c
+            if len(current) > len(longest):
+                longest = current
         else:
-            current_substring = letter
-    return longest_substring
+            current = c
+    return longest
 
 
 def main():
     s = input("Enter a string: ")
-    print("Longest substring in alphabetical order is: " + obtain_longest_substring(s))
+    print("Longest substring in alphabetical order is:",
+          get_longest_substring(s))
 
 if __name__ == "__main__":
     main()
