@@ -34,7 +34,7 @@ def main():
     s = input('Enter a string: ')
     print('Number of times bob occurs is:', str(count_bobs(s)))
     print('Number of times bob occurs is (using comprehension):',
-          str(count_bobs(s)))
+          str(count_bobs_comprehension(s)))
 
 
 if __name__ == '__main__':
