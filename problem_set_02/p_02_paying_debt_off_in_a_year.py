@@ -21,38 +21,68 @@ Lowest Payment: 180
 """
 
 
-def compute_updated_balance(balance, fixed_payment, annual_interest_rate):
-    monthly_interest_rate = annual_interest_rate / 12.0
+def compute_balance(balance: float,
+                    fixed_payment: float,
+                    annual_interest_rate: float) -> float:
+    """
+    :param balance: balance
+    :param fixed_payment: fixed payment
+    :param annual_interest_rate:  annual interest rate
+    :return: the balance at the end of a month
+    """
+    monthly_interest_rate = annual_interest_rate / 12
     monthly_unpaid_balance = balance - fixed_payment
 
     return monthly_unpaid_balance * (1 + monthly_interest_rate)
 
 
-def compute_balance_after_a_year(balance, fixed_payment, annual_interest_rate):
-    for i in range(12):
-        balance = compute_updated_balance(balance, fixed_payment, annual_interest_rate)
+def compute_balance_after(balance: float,
+                          fixed_payment: float,
+                          annual_interest_rate: float,
+                          months: int=12) -> float:
+    """
+    :param balance: balance
+    :param fixed_payment: fixed payment
+    :param annual_interest_rate: annual interest rate
+    :param months: number of months
+    :return: the balance after months
+    """
+    for _ in range(months):
+        balance = compute_balance(balance,
+                                  fixed_payment,
+                                  annual_interest_rate)
 
     return balance
 
 
-def compute_fixed_monthly_payment(balance, annual_interest_rate):
+def compute_fixed_monthly_payment(balance: float,
+                                  annual_interest_rate: float) -> float:
+    """
+    :param balance: balance
+    :param annual_interest_rate: annual interest rate
+    :return: fixed payment to pay balance within 12 months rounded to two
+    decimal places
+    """
     fixed_payment = 0
 
     while True:
         fixed_payment += 10
-        balance_after_a_year = compute_balance_after_a_year(balance, fixed_payment, annual_interest_rate)
+        balance_after_a_year = compute_balance_after(balance,
+                                                     fixed_payment,
+                                                     annual_interest_rate)
 
         if balance_after_a_year <= 0:
-            return fixed_payment
+            return round(fixed_payment, 2)
 
 
 def main():
-    balance = eval(input("Enter the initial balance: "))
-    annual_interest_rate = eval(input("Enter the annual interest rate as a decimal: "))
-    lowest_payment = compute_fixed_monthly_payment(balance, annual_interest_rate)
+    balance = eval(input('Enter the initial balance: '))
+    annual_interest_rate = eval(
+        input('Enter the annual interest rate as a decimal: '))
+    lowest_payment = compute_fixed_monthly_payment(balance,
+                                                   annual_interest_rate)
+    print('Lowest Payment: ' + str(lowest_payment))
 
-    print("Lowest Payment: " + str(round(lowest_payment, 2)))
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
