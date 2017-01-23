@@ -28,19 +28,19 @@ Remaining balance: 4784.0
 """
 
 
-def compute_balance(balance, minimum_monthly_payment, annual_interest_rate):
-    monthly_interest_rate = annual_interest_rate / 12.0
+def compute_balance(balance: float, annual_interest_rate: float,
+                    monthly_payment_rate: float) -> float:
+    """
+    :param balance: balance
+    :param annual_interest_rate: annual interest rate
+    :param monthly_payment_rate: monthly payment rate
+    :return: balance at the end of a month
+    """
+    minimum_monthly_payment = monthly_payment_rate * balance
+    monthly_interest_rate = annual_interest_rate / 12
     monthly_unpaid_balance = balance - minimum_monthly_payment
 
     return monthly_unpaid_balance * (1 + monthly_interest_rate)
-
-
-def get_balance_after_a_year(balance, annual_interest_rate, monthly_payment_rate):
-    for _ in range(12):
-        minimum_monthly_payment = monthly_payment_rate * balance
-        balance = compute_balance(balance, minimum_monthly_payment, annual_interest_rate)
-
-    return balance
 
 
 def main():
@@ -50,8 +50,12 @@ def main():
     monthly_payment_rate = eval(input(
         'Enter the minimum monthly payment rate as a decimal: '))
 
-    balance_after_a_year = get_balance_after_a_year(balance, annual_interest_rate, monthly_payment_rate)
-    print('Remaining balance: ' + str(round(balance_after_a_year, 2)))
+    for _ in range(12):
+        balance = compute_balance(balance,
+                                  annual_interest_rate,
+                                  monthly_payment_rate)
+
+    print('Remaining balance: ' + str(round(balance, 2)))
 
 
 if __name__ == '__main__':
