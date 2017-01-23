@@ -15,6 +15,16 @@ Python is Python 3 (at least for now). Though I originally provided
 solutions for the original version of this course, I will continue
 updating the contents of this repo in order to fit the new version.
 
+## Running a program
+
+In order to run a module you can simply:
+
+```
+$ python3 module_name.py
+```
+
+This way you can test that the solution provided is working properly.
+
 ## Problem Set 1
 * [**Problem 1:**][1] Counting Vowels
 * [**Problem 2:**][2] Counting Bobs
