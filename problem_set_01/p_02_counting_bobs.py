@@ -15,18 +15,29 @@ comprehension which is widely used by Pythonistas.
 
 
 def count_bobs(s: str) -> int:
+    """
+    :param s: a string
+    :return: the number of bobs in s
+    """
     bob = 'bob'
     bob_len = len(bob)
     counter = 0
+
     for i in range(len(s) - bob_len + 1):
         if s[i:i + bob_len] == bob:
             counter += 1
+
     return counter
 
 
 def count_bobs_comprehension(s: str) -> int:
+    """
+    :param s: a string
+    :return: the number of bobs in s
+    """
     bob = 'bob'
     bob_len = len(bob)
+
     return len([bob for i in range(len(s) - bob_len + 1)
                 if s[i:i + bob_len] == bob])
 
