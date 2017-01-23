@@ -21,9 +21,9 @@ updating the contents of this repo in order to fit the new version.
 * [**Problem 3:**][3] Longest Alphabetical Ordered Substring
 
 ## Problem Set 2
-* Paying the Minimum
-* Paying Debt off in a Year
-* Using Bisection Search to Make the Program Faster
+* [**Problem 1:**][4] Paying Debt off in a Year
+* [**Problem 2:**][5] Paying Debt Off in a Year
+* [**Problem 3:**][6] Using Bisection Search to Make the Program Faster
 
 ## Problem Set 3
 * Radiation Exposure
@@ -54,3 +54,6 @@ updating the contents of this repo in order to fit the new version.
 [1]: problem_set_01/p_01_counting_vowels.py
 [2]: problem_set_01/p_02_counting_bobs.py
 [3]: problem_set_01/p_03_longest_substring.py
+[4]: problem_set_02/p_01_paying_debt_off_in_a_year.py
+[5]: problem_set_02/p_02_paying_debt_off_in_a_year.py
+[6]: problem_set_02/p_03_using_bisection_search.py
