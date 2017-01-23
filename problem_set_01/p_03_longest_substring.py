@@ -16,6 +16,10 @@ Longest substring in alphabetical order is: abc
 
 
 def get_longest_substring(s: str) -> str:
+    """
+    :param s: a string
+    :return: the longest substring in alphabetical order
+    """
     longest = current = s[0]
     for c in s[1:]:
         if c >= current[-1]:

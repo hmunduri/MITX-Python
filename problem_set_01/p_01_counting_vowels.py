@@ -16,6 +16,10 @@ feature called comprehension which use widely used between Pythonistas.
 
 
 def count_vowels(s: str) -> int:
+    """
+    :param s: a string
+    :return: the number of vowels in s
+    """
     counter = 0
     for c in s:
         if c in 'aeiou':
@@ -23,6 +27,10 @@ def count_vowels(s: str) -> int:
     return counter
 
 def count_vowels_comprehension(s: str) -> int:
+    """
+    :param s: a string
+    :return: the number of vowels in s
+    """
     return len([v for v in s if v in 'aeiou'])
 
 
