@@ -24,6 +24,7 @@ $ python3 module_name.py
 ```
 
 This way you can test that the solution provided is working properly.
+Make sure to be inside the directory where the module is.
 
 ## Problem Set 1
 * [**Problem 1:**][1] Counting Vowels
