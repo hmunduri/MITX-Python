@@ -54,9 +54,9 @@ def print_monthly_balance(balance, annual_interest_rate, monthly_payment_rate, m
     updated_balance, minimum_monthly_payment = \
         compute_updated_balance_and_minimum_monthly_payment(balance, annual_interest_rate, monthly_payment_rate)
 
-    print("Month: " + str(month))
-    print("Minimum monthly payment: " + str(round_number_two_decimals(minimum_monthly_payment)))
-    print("Remaining balance: " + str(round_number_two_decimals(updated_balance)))
+    print('Month: ' + str(month))
+    print('Minimum monthly payment: ' + str(round_number_two_decimals(minimum_monthly_payment)))
+    print('Remaining balance: ' + str(round_number_two_decimals(updated_balance)))
 
 
 def print_balance_after_a_year(balance, annual_interest_rate, monthly_payment_rate):
@@ -67,17 +67,17 @@ def print_balance_after_a_year(balance, annual_interest_rate, monthly_payment_ra
             compute_updated_balance_and_minimum_monthly_payment(balance, annual_interest_rate, monthly_payment_rate)
         total_paid += monthly_payment
 
-    print("Total paid: " + str(round_number_two_decimals(total_paid)))
-    print("Remaining balance: " + str(round_number_two_decimals(balance)))
+    print('Total paid: ' + str(round_number_two_decimals(total_paid)))
+    print('Remaining balance: ' + str(round_number_two_decimals(balance)))
 
 
 def main():
-    balance = eval(input("Enter the initial balance: "))
-    annual_interest_rate = eval(input("Enter the annual interest rate as a decimal: "))
-    monthly_payment_rate = eval(input("Enter the minimum monthly payment rate as a decimal: "))
+    balance = eval(input('Enter the initial balance: '))
+    annual_interest_rate = eval(input('Enter the annual interest rate as a decimal: '))
+    monthly_payment_rate = eval(input('Enter the minimum monthly payment rate as a decimal: '))
 
     print_balance_after_a_year(balance, annual_interest_rate, monthly_payment_rate)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
