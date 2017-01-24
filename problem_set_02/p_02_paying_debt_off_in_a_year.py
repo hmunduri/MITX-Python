@@ -21,19 +21,6 @@ Lowest Payment: 180
 """
 
 
-def compute_balance(balance: float,
-                    fixed_payment: float,
-                    annual_interest_rate: float) -> float:
-    """
-    :param balance: balance
-    :param fixed_payment: fixed payment
-    :param annual_interest_rate:  annual interest rate
-    :return: the balance at the end of a month
-    """
-    monthly_interest_rate = annual_interest_rate / 12
-    monthly_unpaid_balance = balance - fixed_payment
-
-    return monthly_unpaid_balance * (1 + monthly_interest_rate)
 
 
 def compute_balance_after(balance: float,
