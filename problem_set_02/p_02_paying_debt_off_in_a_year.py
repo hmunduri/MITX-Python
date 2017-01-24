@@ -20,30 +20,32 @@ pay off all debt in under 1 year, for example:
 Lowest Payment: 180
 """
 
+from p_01_paying_debt_off_in_a_year import compute_balance
 
 
-
-def compute_balance_after(balance: float,
-                          fixed_payment: float,
-                          annual_interest_rate: float,
-                          months: int=12) -> float:
+def compute_balance_after(
+        balance: float,
+        payment: float,
+        annual_interest_rate: float,
+        months: int=12) -> float:
     """
     :param balance: balance
-    :param fixed_payment: fixed payment
+    :param payment: payment
     :param annual_interest_rate: annual interest rate
     :param months: number of months
     :return: the balance after months
     """
     for _ in range(months):
         balance = compute_balance(balance,
-                                  fixed_payment,
+                                  payment,
                                   annual_interest_rate)
 
     return balance
 
 
-def compute_fixed_monthly_payment(balance: float,
-                                  annual_interest_rate: float) -> float:
+def compute_fixed_monthly_payment(
+        balance: float,
+        annual_interest_rate: float) -> float:
     """
     :param balance: balance
     :param annual_interest_rate: annual interest rate

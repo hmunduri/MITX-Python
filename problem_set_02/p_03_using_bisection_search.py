@@ -8,8 +8,9 @@ such that we can pay off the entire balance within a year.
 from p_02_paying_debt_off_in_a_year import compute_balance_after
 
 
-def compute_bounds(balance: float,
-                   annual_interest_rate: float) -> (float, float):
+def compute_bounds(
+        balance: float,
+        annual_interest_rate: float) -> (float, float):
     """"
     :param balance: balance
     :param annual_interest_rate: annual interest rate
@@ -22,8 +23,9 @@ def compute_bounds(balance: float,
     return lower_bound, upper_bound
 
 
-def compute_lowest_payment(balance: float,
-                           annual_interest_rate: float) -> float:
+def compute_lowest_payment(
+        balance: float,
+        annual_interest_rate: float) -> float:
     """
     :param balance: balance
     :param annual_interest_rate: annual interest rate
