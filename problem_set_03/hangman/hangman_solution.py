@@ -67,12 +67,8 @@ def get_guessed_word(secret_word, letters_guessed):
     :returns: string, comprised of letters and underscores that represents
       what letters in secretWord have been guessed so far.
     """
-    guessed_word = ''
-
-    for letter in secret_word:
-        guessed_word += (letter + ' ') if letter in letters_guessed else '_ '
-
-    return guessed_word
+    return ' '.join(letter if letter in letters_guessed else '_'
+                    for letter in secret_word)
 
 
 def get_available_letters(letters_guessed):
