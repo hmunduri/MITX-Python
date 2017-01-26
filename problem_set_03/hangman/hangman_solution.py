@@ -106,11 +106,11 @@ def play_game(secret_word: str) -> bool:
     """
     guesses_left = NUMBER_OF_GUESSES
     letters_guessed = []
+
     while guesses_left > 0 and not is_word_guessed(secret_word,
                                                    letters_guessed):
         print_line_of_dashes()
-        print('You have {} guesses left.'
-              .format(guesses_left))
+        print('You have {} guesses left.'.format(guesses_left))
         print('Available letters: {}'.
               format(get_available_letters(letters_guessed)))
 
