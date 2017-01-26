@@ -77,13 +77,8 @@ def get_available_letters(letters_guessed):
     :returns: string, comprised of letters that represents what letters have
     not yet been guessed.
     """
-    available_letters = ''
-
-    for letter in string.ascii_lowercase:
-        if letter not in letters_guessed:
-            available_letters += letter
-
-    return available_letters
+    return ''.join(letter for letter in string.ascii_lowercase
+                   if letter not in letters_guessed)
 
 
 def print_hangman_game_header(secret_word):
