@@ -81,49 +81,33 @@ def get_available_letters(letters_guessed):
                    if letter not in letters_guessed)
 
 
-def print_hangman_game_header(secret_word):
+def print_hangman_game_header(word_len):
     print('Welcome to the game, Hangman!')
-    print('I am thinking of a word that is ' + str(len(secret_word)) +
-          ' letters long.')
+    print('I am thinking of a word that is {} letters long.'.format(word_len))
 
 
 def print_game_result(was_word_guessed, secret_word):
+    print_line_of_dashes()
     if was_word_guessed:
         print('Congratulations, you won!')
         return
-    print('Sorry, you ran out of guesses. The word was ' + secret_word + '.')
+    print('Sorry, you ran out of guesses. The word was {}.'
+          .format(secret_word))
 
 
 def print_line_of_dashes():
     print('-------------')
 
 
-def hangman(secret_word):
+def play_game(secret_word: str) -> bool:
     """
-    :param secret_word: string, the secret word to guess.
-
-    Starts up an interactive game of Hangman.
-
-    * At the start of the game, let the user know how many
-      letters the secretWord contains.
-
-    * Ask the user to supply one guess (i.e. letter) per round.
-
-    * The user should receive feedback immediately after each guess
-      about whether their guess appears in the computers word.
-
-    * After each round, you should also display to the user the
-      partially guessed word so far, as well as letters that the
-      user has not yet guessed.
-
-    Follows the other limitations detailed in the problem write-up.
+    :param secret_word: secret word to be guessed
+    :return: True if word was guessed, False otherwise.
     """
     guesses_left = NUMBER_OF_GUESSES
     letters_guessed = []
-
-    print_hangman_game_header(secret_word)
-
-    while guesses_left > 0 and not is_word_guessed(secret_word, letters_guessed):
+    while guesses_left > 0 and not is_word_guessed(secret_word,
+                                                   letters_guessed):
         print_line_of_dashes()
         print('You have {} guesses left.'
               .format(guesses_left))
@@ -147,9 +131,32 @@ def hangman(secret_word):
 
         print(get_guessed_word(secret_word, letters_guessed))
 
-    print_line_of_dashes()
-    print_game_result(is_word_guessed(secret_word, letters_guessed),
-                      secret_word)
+    return is_word_guessed(secret_word, letters_guessed)
+
+
+def hangman(secret_word):
+    """
+    :param secret_word: string, the secret word to guess.
+
+    Starts up an interactive game of Hangman.
+
+    * At the start of the game, let the user know how many
+      letters the secretWord contains.
+
+    * Ask the user to supply one guess (i.e. letter) per round.
+
+    * The user should receive feedback immediately after each guess
+      about whether their guess appears in the computers word.
+
+    * After each round, you should also display to the user the
+      partially guessed word so far, as well as letters that the
+      user has not yet guessed.
+
+    Follows the other limitations detailed in the problem write-up.
+    """
+    print_hangman_game_header(len(secret_word))
+    game_result = play_game(secret_word)
+    print_game_result(game_result, secret_word)
 
 
 def main():
