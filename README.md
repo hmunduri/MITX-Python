@@ -37,8 +37,9 @@ Make sure to be inside the directory where the module is.
 * [**Problem 3:**][6] Using Bisection Search to Make the Program Faster
 
 ## Problem Set 3
-* Radiation Exposure
-* Hangman
+* [Radiation Exposure][7] (it has been removed in the Python 3 version
+of the couse)
+* [Hangman][8]
 
 ## Problem Set 4
 * A Word Game
@@ -68,3 +69,5 @@ Make sure to be inside the directory where the module is.
 [4]: problem_set_02/p_01_paying_debt_off_in_a_year.py
 [5]: problem_set_02/p_02_paying_debt_off_in_a_year.py
 [6]: problem_set_02/p_03_using_bisection_search.py
+[7]: problem_set_03/radiation/radiation_exposure.py
+[8]: problem_set_03/hangman/hangman.py
