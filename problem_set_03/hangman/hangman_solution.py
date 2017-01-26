@@ -118,31 +118,32 @@ def hangman(secret_word):
 
     Follows the other limitations detailed in the problem write-up.
     """
-    mistakes_made = 0
+    guesses_left = NUMBER_OF_GUESSES
     letters_guessed = []
 
     print_hangman_game_header(secret_word)
 
-    while NUMBER_OF_GUESSES - mistakes_made > 0 and not is_word_guessed(
-            secret_word, letters_guessed):
+    while guesses_left > 0 and not is_word_guessed(secret_word, letters_guessed):
         print_line_of_dashes()
-        print('You have ' + str(NUMBER_OF_GUESSES - mistakes_made) +
-              ' guesses left.')
-        print('Available letters: ' + get_available_letters(letters_guessed))
+        print('You have {} guesses left.'
+              .format(guesses_left))
+        print('Available letters: {}'.
+              format(get_available_letters(letters_guessed)))
+
         letter_guessed = input('Please guess a letter: ').lower()
 
         if letter_guessed in letters_guessed:
-            print("Oops! You've already guessed that letter: " +
-                  get_guessed_word(secret_word, letters_guessed))
+            print("Oops! You've already guessed that letter: {}".
+                  format(get_guessed_word(secret_word, letters_guessed)))
             continue
 
         letters_guessed.append(letter_guessed)
 
         if letter_guessed in secret_word:
-            print('Good guess:', end=" ")
+            print('Good guess:', end=' ')
         else:
             print('Oops! That letter is not in my word:', end=' ')
-            mistakes_made += 1
+            guesses_left -= 1
 
         print(get_guessed_word(secret_word, letters_guessed))
 
