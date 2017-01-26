@@ -81,12 +81,12 @@ def get_available_letters(letters_guessed):
                    if letter not in letters_guessed)
 
 
-def print_hangman_game_header(word_len):
+def print_header(word_len):
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is {} letters long.'.format(word_len))
 
 
-def print_game_result(was_word_guessed, secret_word):
+def print_result(was_word_guessed, secret_word):
     print_line_of_dashes()
     if was_word_guessed:
         print('Congratulations, you won!')
@@ -154,9 +154,9 @@ def hangman(secret_word):
 
     Follows the other limitations detailed in the problem write-up.
     """
-    print_hangman_game_header(len(secret_word))
+    print_header(len(secret_word))
     game_result = play_game(secret_word)
-    print_game_result(game_result, secret_word)
+    print_result(game_result, secret_word)
 
 
 def main():
