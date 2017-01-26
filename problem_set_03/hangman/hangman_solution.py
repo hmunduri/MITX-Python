@@ -57,11 +57,8 @@ def is_word_guessed(secret_word, letters_guessed):
     :returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
     """
-    for letter in secret_word:
-        if letter not in letters_guessed:
-            return False
-
-    return True
+    return all(letter in letters_guessed
+               for letter in secret_word)
 
 
 def get_guessed_word(secret_word, letters_guessed):
