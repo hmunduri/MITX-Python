@@ -12,7 +12,7 @@
 import random
 import string
 
-WORD_LIST_FILENAME = "words.txt"
+WORD_LIST_FILENAME = 'words.txt'
 NUMBER_OF_GUESSES = 8
 
 # Helper Code
@@ -27,13 +27,13 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    print("Loading word list from file...")
+    print('Loading word list from file...')
 
     with open(WORD_LIST_FILENAME) as file:
         line = file.read()
 
     word_list = line.split()
-    print("  ", len(word_list), "words loaded.")
+    print('  ', len(word_list), 'words loaded.')
 
     return word_list
 
@@ -54,11 +54,10 @@ def is_word_guessed(secret_word, letters_guessed):
     """
     :param secret_word: string, the word the user is guessing
     :param letters_guessed: list, what letters have been guessed so far
-    :returns: boolean, True if all the letters of secretWord are in lettersGuessed;
-      False otherwise
+    :returns: boolean, True if all the letters of secretWord are in
+        lettersGuessed; False otherwise
     """
-    return all(letter in letters_guessed
-               for letter in secret_word)
+    return all(letter in letters_guessed for letter in secret_word)
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -79,8 +78,8 @@ def get_guessed_word(secret_word, letters_guessed):
 def get_available_letters(letters_guessed):
     """
     :param letters_guessed: list, what letters have been guessed so far
-    :returns: string, comprised of letters that represents what letters have not
-      yet been guessed.
+    :returns: string, comprised of letters that represents what letters have
+    not yet been guessed.
     """
     available_letters = ""
 
@@ -93,7 +92,8 @@ def get_available_letters(letters_guessed):
 
 def print_hangman_game_header(secret_word):
     print("Welcome to the game, Hangman!")
-    print("I am thinking of a word that is " + str(len(secret_word)) + " letters long.")
+    print("I am thinking of a word that is " + str(len(secret_word)) +
+          " letters long.")
 
 
 def print_game_result(was_word_guessed, secret_word):
@@ -132,14 +132,17 @@ def hangman(secret_word):
 
     print_hangman_game_header(secret_word)
 
-    while NUMBER_OF_GUESSES - mistakes_made > 0 and not is_word_guessed(secret_word, letters_guessed):
+    while NUMBER_OF_GUESSES - mistakes_made > 0 and not is_word_guessed(
+            secret_word, letters_guessed):
         print_line_of_dashes()
-        print("You have " + str(NUMBER_OF_GUESSES - mistakes_made) + " guesses left.")
+        print("You have " + str(NUMBER_OF_GUESSES - mistakes_made) +
+              " guesses left.")
         print("Available letters: " + get_available_letters(letters_guessed))
         letter_guessed = input("Please guess a letter: ").lower()
 
         if letter_guessed in letters_guessed:
-            print("Oops! You've already guessed that letter: " + get_guessed_word(secret_word, letters_guessed))
+            print("Oops! You've already guessed that letter: " +
+                  get_guessed_word(secret_word, letters_guessed))
             continue
 
         letters_guessed.append(letter_guessed)
@@ -153,7 +156,8 @@ def hangman(secret_word):
         print(get_guessed_word(secret_word, letters_guessed))
 
     print_line_of_dashes()
-    print_game_result(is_word_guessed(secret_word, letters_guessed), secret_word)
+    print_game_result(is_word_guessed(secret_word, letters_guessed),
+                      secret_word)
 
 
 def main():
