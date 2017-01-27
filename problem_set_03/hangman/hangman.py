@@ -38,7 +38,7 @@ def load_words():
     return word_list
 
 
-def choose_word(word_list):
+def choose_word(word_list: [str]) -> str:
     """
     :param word_list: list of words (strings)
 
@@ -50,7 +50,7 @@ def choose_word(word_list):
 # -----------------------------------
 
 
-def is_word_guessed(secret_word, letters_guessed):
+def is_word_guessed(secret_word: str, letters_guessed: [str]) -> bool:
     """
     :param secret_word: string, the word the user is guessing
     :param letters_guessed: list, what letters have been guessed so far
@@ -60,7 +60,7 @@ def is_word_guessed(secret_word, letters_guessed):
     return all(letter in letters_guessed for letter in secret_word)
 
 
-def get_guessed_word(secret_word, letters_guessed):
+def get_guessed_word(secret_word: str, letters_guessed: [str]) -> str:
     """
     :param secret_word: string, the word the user is guessing
     :param letters_guessed: list, what letters have been guessed so far
@@ -71,7 +71,7 @@ def get_guessed_word(secret_word, letters_guessed):
                     for letter in secret_word)
 
 
-def get_available_letters(letters_guessed):
+def get_available_letters(letters_guessed: [str]) -> str:
     """
     :param letters_guessed: list, what letters have been guessed so far
     :returns: string, comprised of letters that represents what letters have
@@ -81,12 +81,12 @@ def get_available_letters(letters_guessed):
                    if letter not in letters_guessed)
 
 
-def print_header(word_len):
+def print_header(word_len: int):
     print('Welcome to the game, Hangman!')
     print('I am thinking of a word that is {} letters long.'.format(word_len))
 
 
-def print_result(was_word_guessed, secret_word):
+def print_result(was_word_guessed: bool, secret_word: str):
     print_line_of_dashes()
     if was_word_guessed:
         print('Congratulations, you won!')
@@ -134,7 +134,7 @@ def play_game(secret_word: str) -> bool:
     return is_word_guessed(secret_word, letters_guessed)
 
 
-def hangman(secret_word):
+def hangman(secret_word: str):
     """
     :param secret_word: string, the secret word to guess.
 
