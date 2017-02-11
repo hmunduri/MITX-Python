@@ -13,8 +13,9 @@ CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
 HAND_SIZE = 7
 
 SCRABBLE_LETTER_VALUES = {
-    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1,
-    'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
+    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1,
+    'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1,
+    's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
 
 # -----------------------------------
@@ -72,8 +73,10 @@ def get_word_score(word, n):
     worth 3, D is worth 2, E is worth 1, and so on (see SCRABBLE_LETTER_VALUES)
 
     :param word: string (lowercase letters)
-    :param n: integer (HAND_SIZE; i.e., hand size required for additional points)
-    :returns: the score for a word. Assumes the word is a valid word. (int >= 0)
+    :param n: integer (HAND_SIZE; i.e., hand size required for additional
+        points)
+    :returns: the score for a word. Assumes the word is a valid word.
+        (int >= 0)
     """
     score = 0
 
@@ -105,7 +108,8 @@ def display_hand(hand):
 
 
 #
-# Problem #2: Make sure you understand how this function works and what it does!
+# Problem #2: Make sure you understand how this function works and what it
+# does!
 #
 def deal_hand(n):
     """
@@ -210,7 +214,8 @@ def print_total_score(score):
 def update_and_print_score(score, word, n):
     current_score = get_word_score(word, n)
     score += current_score
-    print("\"" + word + "\" earned " + str(current_score) + " points.", end=" ")
+    print("\"" + word + "\" earned " + str(current_score) + " points.",
+          end=" ")
     print_total_score(score)
 
     return score
@@ -235,7 +240,8 @@ def play_hand(hand, word_list, n):
 
     :param hand: dictionary (string -> int)
     :param word_list: list of lowercase strings
-    :param n: integer (HAND_SIZE; i.e., hand size required for additional points)
+    :param n: integer (HAND_SIZE; i.e., hand size required for additional
+        points)
     """
     score = 0
     while calculate_hand_len(hand):
