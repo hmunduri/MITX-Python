@@ -78,10 +78,7 @@ def get_word_score(word, n):
     :returns: the score for a word. Assumes the word is a valid word.
         (int >= 0)
     """
-    score = 0
-
-    for letter in word:
-        score += SCRABBLE_LETTER_VALUES[letter]
+    score = sum([SCRABBLE_LETTER_VALUES[letter] for letter in word])
 
     return score * len(word) + 50 * (len(word) == n)
 
