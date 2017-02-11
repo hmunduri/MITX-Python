@@ -76,14 +76,14 @@ def play_computer_hand(hand, word_list, n):
 def get_valid_player():
     while True:
         player = input(PLAYER_PROMPT)
-        if player == "c" or player == "u":
+        if player in ('c', 'u'):
             return player
         else:
             print(INVALID_COMMAND)
 
 
 def perform_play(player, hand, word_list, n):
-    if player == "c":
+    if player == 'c':
         play_computer_hand(hand, word_list, n)
     else:
         play_hand(hand, word_list, n)
@@ -119,11 +119,11 @@ def play_game(word_list):
     """
     action = get_initial_valid_input()
 
-    while action != "e":
-        if action != "n" and action != "r":
+    while action != 'e':
+        if action not in ('n', 'r'):
             print(INVALID_COMMAND)
         else:
-            if action == "n":
+            if action == 'n':
                 hand = deal_hand(HAND_SIZE)
             player = get_valid_player()
             perform_play(player, hand, word_list, HAND_SIZE)
