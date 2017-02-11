@@ -22,7 +22,7 @@ SCRABBLE_LETTER_VALUES = {
 # Helper code
 # (you don't need to understand this helper code)
 
-WORD_LIST_FILENAME = "words.txt"
+WORD_LIST_FILENAME = 'words.txt'
 
 
 def load_words():
@@ -32,14 +32,14 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    print("Loading word list from file...")
+    print('Loading word list from file...')
     # in_file: file
     in_file = open(WORD_LIST_FILENAME)
     # word_list: list of strings
     word_list = []
     for line in in_file:
         word_list.append(line.strip().lower())
-    print("  ", len(word_list), "words loaded.")
+    print("  ", len(word_list), 'words loaded.')
     return word_list
 
 
@@ -103,7 +103,7 @@ def display_hand(hand):
     """
     for letter in hand.keys():
         for j in range(hand[letter]):
-            print(letter, end=" ")  # print all on the same line
+            print(letter, end=' ')  # print all on the same line
     print()  # print an empty line
 
 
@@ -203,19 +203,19 @@ def calculate_hand_len(hand):
 
 
 def print_current_hand(hand):
-    print("Current Hand:", end=" ")
+    print('Current Hand:', end=' ')
     display_hand(hand)
 
 
 def print_total_score(score):
-    print("Total score: " + str(score) + " points.")
+    print('Total score: ' + str(score) + ' points.')
 
 
 def update_and_print_score(score, word, n):
     current_score = get_word_score(word, n)
     score += current_score
-    print("\"" + word + "\" earned " + str(current_score) + " points.",
-          end=" ")
+    print('"' + word + '" earned ' + str(current_score) + ' points.',
+          end=' ')
     print_total_score(score)
 
     return score
@@ -248,8 +248,8 @@ def play_hand(hand, word_list, n):
         print_current_hand(hand)
         word = input(ENTER_WORD_PROMPT)
 
-        if word == ".":
-            print(BYE, end=" ")
+        if word == '.':
+            print(BYE, end=' ')
             break
 
         if is_valid_word(word, hand, word_list):
@@ -260,7 +260,7 @@ def play_hand(hand, word_list, n):
         print()
 
     if calculate_hand_len(hand) == 0:
-        print(OUT_OF_LETTERS, end=" ")
+        print(OUT_OF_LETTERS, end=' ')
 
     print_total_score(score)
 
@@ -268,8 +268,8 @@ def play_hand(hand, word_list, n):
 def get_initial_valid_input():
     action = input(PLAY_GAME_PROMPT)
     # avoids user entering r when he hasn't played before
-    while action != "n" and action != "e":
-        if action == "r":
+    while action != 'n' and action != 'e':
+        if action == 'r':
             print(NO_HAND_ENTERED_YET)
         else:
             print(INVALID_COMMAND_MESSAGE)
@@ -297,11 +297,11 @@ def play_game(word_list):
     """
     action = get_initial_valid_input()
 
-    while action != "e":
-        if action != "n" and action != "r":
+    while action != 'e':
+        if action != 'n' and action != 'r':
             print(INVALID_COMMAND_MESSAGE)
         else:
-            if action == "n":
+            if action == 'n':
                 hand = deal_hand(HAND_SIZE)
             play_hand(hand, word_list, HAND_SIZE)
             print()
