@@ -23,13 +23,17 @@ def get_computer_chosen_word(hand, word_list, n):
 
     :returns: string or None
     """
-    best_word = ""
+    best_score = 0
+    best_word = None
 
     for word in word_list:
-        if is_valid_word(word, hand, word_list) and get_word_score(word, n) > get_word_score(best_word, n):
-            best_word = word
+        if is_valid_word(word, hand, word_list):
+            score = get_word_score(word, n)
+            if  score > best_score:
+                best_score = score
+                best_word = word
 
-    return best_word if best_word else None
+    return best_word
 
 
 #
