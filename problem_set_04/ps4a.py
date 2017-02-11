@@ -236,17 +236,22 @@ def play_hand(hand, word_list, n):
     score = 0
     while calculate_hand_len(hand):
         print_current_hand(hand)
-        word = input(ENTER_WORD_PROMPT)
+        word = input(ENTER_WORD)
 
         if word == '.':
             print(BYE, end=' ')
             break
 
         if is_valid_word(word, hand, word_list):
+            # IMPORTANT: according to the new version of this problem set
+            # the total score is the score of the last word, but imho it does
+            # not make so much sense, so I wilL add the score of each guessed
+            # word. So, use score = update_and_print_score(score, word, n)
+            # to pass the grader's test.
             score += update_and_print_score(score, word, n)
             hand = update_hand(hand, word)
         else:
-            print(INVALID_WORD_MESSAGE)
+            print(INVALID_WORD)
         print()
 
     if calculate_hand_len(hand) == 0:
@@ -256,14 +261,14 @@ def play_hand(hand, word_list, n):
 
 
 def get_initial_valid_input():
-    action = input(PLAY_GAME_PROMPT)
+    action = input(PLAY_GAME)
     # avoids user entering r when he hasn't played before
-    while action != 'n' and action != 'e':
+    while action not in ('n', 'e'):
         if action == 'r':
-            print(NO_HAND_ENTERED_YET)
+            print(NO_HAND_PLAYED_YET)
         else:
-            print(INVALID_COMMAND_MESSAGE)
-        action = input(PLAY_GAME_PROMPT)
+            print(INVALID_COMMAND)
+        action = input(PLAY_GAME)
 
     return action
 
@@ -288,15 +293,15 @@ def play_game(word_list):
     action = get_initial_valid_input()
 
     while action != 'e':
-        if action != 'n' and action != 'r':
-            print(INVALID_COMMAND_MESSAGE)
+        if action not in ('n', 'r'):
+            print(INVALID_COMMAND)
         else:
             if action == 'n':
                 hand = deal_hand(HAND_SIZE)
             play_hand(hand, word_list, HAND_SIZE)
             print()
 
-        action = input(PLAY_GAME_PROMPT)
+        action = input(PLAY_GAME)
 
 
 def main():

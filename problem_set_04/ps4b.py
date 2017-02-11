@@ -75,7 +75,7 @@ def get_valid_player():
         if player == "c" or player == "u":
             return player
         else:
-            print(INVALID_COMMAND_MESSAGE)
+            print(INVALID_COMMAND)
 
 
 def perform_play(player, hand, word_list, n):
@@ -117,7 +117,7 @@ def play_game(word_list):
 
     while action != "e":
         if action != "n" and action != "r":
-            print(INVALID_COMMAND_MESSAGE)
+            print(INVALID_COMMAND)
         else:
             if action == "n":
                 hand = deal_hand(HAND_SIZE)
@@ -125,7 +125,7 @@ def play_game(word_list):
             perform_play(player, hand, word_list, HAND_SIZE)
             print()
 
-        action = input(PLAY_GAME_PROMPT)
+        action = input(PLAY_GAME)
 
 
 def main():
