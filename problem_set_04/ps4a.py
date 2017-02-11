@@ -174,11 +174,10 @@ def is_valid_word(word, hand, word_list):
     """
     letter_frequency = get_frequency_dict(word)
 
-    for letter in letter_frequency:
-        if hand.get(letter, 0) < letter_frequency[letter]:
-            return False
-
-    return word in word_list
+    return all([
+        hand.get(letter, 0) >= frequency
+        for letter, frequency in letter_frequency.items()
+        ]) and word in word_list
 
 
 #
