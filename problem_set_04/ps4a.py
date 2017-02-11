@@ -152,10 +152,9 @@ def update_hand(hand, word):
     :returns: dictionary (string -> int).
     """
     updated_hand = hand.copy()
-    letter_frequency = get_frequency_dict(word)
 
-    for letter in letter_frequency:
-        updated_hand[letter] -= letter_frequency[letter]
+    for letter in word:
+        updated_hand[letter] -= 1
 
     return updated_hand
 
