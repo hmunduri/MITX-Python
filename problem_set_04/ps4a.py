@@ -174,10 +174,10 @@ def is_valid_word(word, hand, word_list):
     """
     letter_frequency = get_frequency_dict(word)
 
-    return all([
+    return all(
         hand.get(letter, 0) >= frequency
         for letter, frequency in letter_frequency.items()
-        ]) and word in word_list
+    ) and word in word_list
 
 
 #
@@ -189,12 +189,7 @@ def calculate_hand_len(hand):
     :param hand: dictionary (string-> int)
     :returns: the length (number of letters) in the current hand.
     """
-    number_of_letters = 0
-
-    for letter in hand:
-        number_of_letters += hand[letter]
-
-    return number_of_letters
+    return sum(hand[letter] for letter in hand)
 
 
 def print_current_hand(hand):
