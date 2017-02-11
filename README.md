@@ -42,7 +42,7 @@ of the couse)
 * [Hangman][8]
 
 ## Problem Set 4
-* [**A Word Game**][9]
+* [A Word Game][9]
 
 ## Problem Set 6
 * Encryption
@@ -71,4 +71,4 @@ of the couse)
 [6]: problem_set_02/p_03_using_bisection_search.py
 [7]: problem_set_03/radiation/radiation_exposure.py
 [8]: problem_set_03/hangman/hangman.py
-[9]: problem_set_04/hangman/
+[9]: problem_set_04/
