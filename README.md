@@ -44,7 +44,7 @@ of the course)
 ## Problem Set 4
 * [A Word Game][9]
 
-## Problem Set 6
+## Problem Set 5
 * [Encryption][10]
 * [Recursion][11] (it has been removed in the Python 3 version of
 the course)
