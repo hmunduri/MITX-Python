@@ -5,7 +5,7 @@
 import string
 import random
 
-WORD_LIST_FILENAME = "words.txt"
+WORD_LIST_FILENAME = 'words.txt'
 
 
 # -----------------------------------
@@ -18,12 +18,12 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    print("Loading word list from file...")
+    print('Loading word list from file...')
 
     with open(WORD_LIST_FILENAME) as file:
         word_list = file.read().split()
 
-    print("  ", len(word_list), "words loaded.")
+    print('  ', len(word_list), 'words loaded.')
 
     return word_list
 
@@ -37,7 +37,7 @@ def is_word(word_list, word):
     :returns: True if word is in word_list.
     """
     word = word.lower()
-    word = word.strip(" !@#$%^&*()-_+={}[]|\\:;'<>?,./\"")
+    word = word.strip(' !@#$%^&*()-_+={}[]|\\:;\'<>?,./"')
     return word in word_list
 
 
@@ -58,7 +58,7 @@ def random_string(word_list, n):
     :param word_list: list of words
     :returns: a string of random words separated by spaces.
     """
-    return " ".join([random_word(word_list) for _ in range(n)])
+    return ' '.join([random_word(word_list) for _ in range(n)])
 
 
 def random_scrambled(word_list, n):
@@ -74,7 +74,7 @@ def random_scrambled(word_list, n):
     This function will ONLY work once you have completed your
     implementation of applyShifts!
     """
-    s = random_string(word_list, n) + " "
+    s = random_string(word_list, n) + ' '
     shifts = [(i, random.randint(0, 25)) for i in range(len(s)) if s[i - 1] == ' ']
     return apply_shift(s, shifts)[:-1]
 
@@ -83,7 +83,7 @@ def get_story_string():
     """
     :returns: a story in encrypted text.
     """
-    return open("story.txt", "r").read()
+    return open('story.txt', 'r').read()
 
 
 # (end of helper code)
@@ -130,7 +130,7 @@ def apply_coder(text, coder):
     :param coder: dict with mappings of characters to shifted characters
     :returns: text after mapping coder chars to original text
     """
-    cyphertext = ""
+    cyphertext = ''
 
     for letter in text:
         if letter in string.ascii_letters:
