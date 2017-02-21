@@ -38,25 +38,22 @@ Make sure to be inside the directory where the module is.
 
 ## Problem Set 3
 * [Radiation Exposure][7] (it has been removed in the Python 3 version
-of the couse)
+of the course)
 * [Hangman][8]
 
 ## Problem Set 4
 * [A Word Game][9]
 
 ## Problem Set 6
-* Encryption
-* Recursion
+* [Encryption][10]
+* [Recursion][11] (it has been removed in the Python 3 version of
+the course)
 
 ## Problem Set 7
 * Monitor news feeds over the Internet
 
-## Quiz
-* Problem 4
-* Problem 5
-* Problem 6
-* Problem 7
-* Problem 8
+## Midterm
+* [Feb 2017][13]
 
 ## Final
 * Problem 4
@@ -72,3 +69,6 @@ of the couse)
 [7]: problem_set_03/radiation/radiation_exposure.py
 [8]: problem_set_03/hangman/hangman.py
 [9]: problem_set_04/
+[10]: problem_set_05/encryption_decryption.py
+[11]: problem_set_05/ps6_recursion.py
+[13]: midterm/feb_2017/
