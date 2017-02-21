@@ -262,10 +262,9 @@ def decrypt_story():
     :returns: string - story in plain text
     """
     story = get_story_string()
-    word_list = load_words()
-    best_shift = find_best_shift(word_list, story)
+    cipher = CiphertextMessage(story)
 
-    return apply_shift(story, best_shift)
+    return cipher.decrypt_message()
 
 
 #
