@@ -63,7 +63,7 @@ def get_story_string():
 WORDLIST_FILENAME = 'words.txt'
 
 
-class Message(object):
+class Message:
     ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text):
         '''
@@ -110,7 +110,15 @@ class Message(object):
         Returns: a dictionary mapping a letter (string) to
                  another letter (string).
         '''
-        pass  # delete this line and replace with your code here
+        letters = string.ascii_lowercase
+        length = len(letters)
+        letter_map = {}
+
+        for i, letter in enumerate(letters):
+            letter_map[letter] = letters[(i + shift) % length]
+            letter_map[letter.upper()] = letters[(i + shift) % length].upper()
+
+        return letter_map
 
     def apply_shift(self, shift):
         '''
@@ -124,7 +132,13 @@ class Message(object):
         Returns: the message text (string) in which every character is shifted
              down the alphabet by the input shift
         '''
-        pass  # delete this line and replace with your code here
+        letters = string.ascii_letters
+        mapper = self.build_shift_dict(shift)
+
+        return ''.join(
+            mapper[letter] if letter in letters else letter
+            for letter in self.message_text
+        )
 
 
 class PlaintextMessage(Message):
@@ -216,56 +230,6 @@ class CiphertextMessage(Message):
         '''
         pass  # delete this line and replace with your code here
 
-
-#
-# Problem 1: Encryption
-#
-
-def shift_lower_case_letters(shifted_dictionary, shift):
-    lower_case_letters = string.ascii_lowercase
-    for i in range(len(lower_case_letters)):
-        shifted_dictionary[lower_case_letters[i]] = lower_case_letters[(i + shift) % len(lower_case_letters)]
-
-
-def shift_upper_case_letters(shifted_dictionary, shift):
-    upper_case_letters = string.ascii_uppercase
-    for i in range(len(upper_case_letters)):
-        shifted_dictionary[upper_case_letters[i]] = upper_case_letters[(i + shift) % len(upper_case_letters)]
-
-
-def build_coder(shift):
-    """
-    Returns a dict that can apply a Caesar cipher to a letter.
-    The cipher is defined by the shift value. Ignores non-letter characters
-    like punctuation, numbers and spaces.
-
-    :param shift: 0 <= int < 26
-    :returns: dict
-    """
-    shifted_dictionary = {}
-    shift_lower_case_letters(shifted_dictionary, shift)
-    shift_upper_case_letters(shifted_dictionary, shift)
-
-    return shifted_dictionary
-
-
-def apply_coder(text, coder):
-    """
-    Applies the coder to the text. Returns the encoded text.
-
-    :param text: string
-    :param coder: dict with mappings of characters to shifted characters
-    :returns: text after mapping coder chars to original text
-    """
-    cyphertext = ''
-
-    for letter in text:
-        if letter in string.ascii_letters:
-            cyphertext += coder[letter]
-        else:
-            cyphertext += letter
-
-    return cyphertext
 
 
 def apply_shift(text, shift):
