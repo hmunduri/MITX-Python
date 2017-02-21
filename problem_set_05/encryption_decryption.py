@@ -215,7 +215,10 @@ class CiphertextMessage(Message):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         '''
-        pass  # delete this line and replace with your code here
+        super().__init__(text)
+
+    def _get_number_of_valid_words(self, words):
+        return sum(1 for word in words if is_word(self.valid_words, word))
 
     def decrypt_message(self):
         '''
@@ -233,58 +236,20 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         '''
-        pass  # delete this line and replace with your code here
+        best_shift = 0
+        max_number_of_valid_words = 0
+        length = len(string.ascii_lowercase)
 
+        for shift in range(length):
+            deciphered_text = self.apply_shift(shift)
+            words = deciphered_text.split()
+            number_of_valid_words = self._get_number_of_valid_words(words)
 
+            if number_of_valid_words > max_number_of_valid_words:
+                best_shift = shift
+                max_number_of_valid_words = number_of_valid_words
 
-def apply_shift(text, shift):
-    """
-    Given a text, returns a new text Caesar shifted by the given shift
-    offset. Lower case letters should remain lower case, upper case
-    letters should remain upper case, and all other punctuation should
-    stay as it is.
-
-    :param text: string to apply the shift to
-    :param shift: amount to shift the text (0 <= int < 26)
-    :returns: text after being shifted by specified amount.
-    """
-    return apply_coder(text, build_coder(shift))
-
-
-def get_number_of_valid_words(words, word_list):
-    number_of_valid_words = 0
-
-    for word in words:
-        if is_word(word_list, word):
-            number_of_valid_words += 1
-
-    return number_of_valid_words
-
-
-#
-# Problem 2: Decryption
-#
-def find_best_shift(word_list, text):
-    """
-    Finds a shift key that can decrypt the encoded text.
-
-    :param word_list: a lists of words
-    :param text: string
-    :returns: 0 <= int < 26
-    """
-    best_shift = 0
-    max_number_of_valid_words = 0
-
-    for shift in range(26):
-        deciphered_text = apply_shift(text, shift)
-        words = deciphered_text.split()
-        number_of_valid_words = get_number_of_valid_words(words, word_list)
-
-        if number_of_valid_words > max_number_of_valid_words:
-            best_shift = shift
-            max_number_of_valid_words = number_of_valid_words
-
-    return best_shift
+        return best_shift, self.apply_shift(best_shift)
 
 
 def decrypt_story():
