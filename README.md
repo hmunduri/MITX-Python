@@ -49,8 +49,12 @@ of the course)
 * [Recursion][11] (it has been removed in the Python 3 version of
 the course)
 
+## Problem Set 6
+* [Algorithmic Complexity][12]
+
 ## Problem Set 7
-* Monitor news feeds over the Internet
+* Monitor news feeds over the Internet (it has been removed in the
+Python 3 version of the course)
 
 ## Midterm
 * [Feb 2017][13]
@@ -71,4 +75,5 @@ the course)
 [9]: problem_set_04/
 [10]: problem_set_05/encryption_decryption.py
 [11]: problem_set_05/ps6_recursion.py
+[12]: probelm_set_06/
 [13]: midterm/feb_2017/
