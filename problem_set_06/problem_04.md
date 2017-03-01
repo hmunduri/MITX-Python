@@ -23,7 +23,7 @@ def multlist(m, n):
     '''
     result = []
     for i in range(len(n)):
-        result.append(m*n[i])
+        result.append(m * n[i])
     return result
 ```
 
@@ -37,7 +37,7 @@ Consider the following Python procedure. Specify its order of growth.
 def foo(n):
     if n <= 1:
         return 1
-    return foo(n/2) + 1
+    return foo(n / 2) + 1
 ```
 
 **O(log(n))**
@@ -50,7 +50,7 @@ def recur(n):
     if n <= 0:
         return 1
     else:
-        return n*recur(n-1)
+        return n*recur(n - 1)
 ```
 
 **O(n)**
@@ -62,7 +62,7 @@ Consider the following Python procedure. Specify its order of growth.
 def baz(n):
     for i in range(n):
         for j in range(n):
-            print( i,j )
+            print(i, j)
 ```
 
 **O(n^2)**
