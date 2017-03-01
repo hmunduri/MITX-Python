@@ -75,5 +75,5 @@ Python 3 version of the course)
 [9]: problem_set_04/
 [10]: problem_set_05/encryption_decryption.py
 [11]: problem_set_05/ps6_recursion.py
-[12]: probelm_set_06/
+[12]: problem_set_06/
 [13]: midterm/feb_2017/
