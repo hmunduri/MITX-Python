@@ -47,9 +47,3 @@ def longest_run(L):
             return sum(max_increasing)
         else:
             return sum(max_decreasing)
-
-print(longest_run([10, 4, 3, 8, 3, 4, 5, 7, 7, 2]))
-print(longest_run([1, 2, 3, 4, 5, 6, 7, 8, 9]))
-print(longest_run([3, 2, -1, 2, 7]))
-print(longest_run([100, 200, 300, -100, -200, -1500, -5000]))
-print(longest_run([1, 2, 3, 2, -1]))

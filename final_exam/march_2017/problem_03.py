@@ -17,9 +17,3 @@ def convert_to_mandarin(us_num):
     else:
         return '{} {} {}'.format(
             trans[us_num[0]], trans['10'], trans[us_num[-1]])
-
-
-
-print(convert_to_mandarin('36'))
-print(convert_to_mandarin('20'))
-print(convert_to_mandarin('16'))

@@ -11,6 +11,3 @@ def general_poly (L):
         return total
 
     return compute
-
-
-print(general_poly([1, 2, 3, 4])(10))
