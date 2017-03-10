@@ -8,9 +8,9 @@ def convert_to_mandarin(us_num):
     '''
     us_num_int = int(us_num)
 
-    if us_num_int in range(11):
+    if 0 <= us_num_int <= 10:
         return trans[us_num]
-    elif us_num_int in range(11, 20):
+    elif 11 <= us_num_int <= 19:
         return '{} {}'.format(trans['10'], trans[us_num[-1]])
     elif us_num_int % 10 == 0:
         return '{} {}'.format(trans[us_num[0]], trans['10'])
