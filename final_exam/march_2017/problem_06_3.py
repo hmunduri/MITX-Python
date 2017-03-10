@@ -25,10 +25,3 @@ class ArrogantProfessor(Professor):
 
     def lecture(self, stuff):
         return 'It is obvious that ' + Lecturer.lecture(self, stuff)
-
-
-pe = Professor('eric')
-ae = ArrogantProfessor('eric')
-
-print(pe.say('the sky is blue'))
-print(ae.say('the sky is blue'))
