@@ -17,7 +17,7 @@ def longest_run(L):
     increasing = max_increasing[:]
     decreasing = max_decreasing[:]
 
-    for i, e in enumerate(L[1:]):
+    for i in range(len(L) - 1):
         if L[i] <= L[i + 1]:
             increasing.append(L[i + 1])
             increasing_indices.append(i + 1)
