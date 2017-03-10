@@ -39,7 +39,6 @@ def longest_run(L):
     elif len(max_increasing) < len(max_decreasing):
         return sum(max_decreasing)
     else:
-        if max_increasing_index < max_decreasing_index:
-            return sum(max_increasing)
-        else:
-            return sum(max_decreasing)
+        return sum(max_increasing
+                   if max_increasing_index < max_decreasing_index else
+                   max_decreasing)
