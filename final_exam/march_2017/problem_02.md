@@ -58,6 +58,6 @@ def foo_two(n):
 the same.**
 
 #### Problem 2-5
-The complexity of 1 ^ n + n ^ 4 + 4 * n + 4 is
+The complexity of `1 ^ n + n ^ 4 + 4 * n + 4` is
 
 **polynomial**
