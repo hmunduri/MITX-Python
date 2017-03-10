@@ -9,9 +9,9 @@ def longest_run(L):
     Returns the sum of the longest run.
     """
     increasing_index = 0
-    decreasing_indices = [0]
+    decreasing_index = 0
     max_increasing_index = increasing_index
-    max_decreasing_indexes = decreasing_indices[:]
+    max_decreasing_index = decreasing_index
     max_increasing = [L[0]]
     max_decreasing = [L[0]]
     increasing = max_increasing[:]
@@ -29,20 +29,19 @@ def longest_run(L):
 
         if L[i] >= L[i + 1]:
             decreasing.append(L[i + 1])
-            decreasing_indices.append(i + 1)
             if len(decreasing) > len(max_decreasing):
                 max_decreasing = decreasing[:]
-                max_decreasing_indexes = decreasing_indices[:]
+                max_decreasing_index = decreasing_index
         else:
             decreasing = [L[i + 1]]
-            decreasing_indices = [i + 1]
+            decreasing_index = i + 1
 
     if len(max_increasing) > len(max_decreasing):
         return sum(max_increasing)
     elif len(max_increasing) < len(max_decreasing):
         return sum(max_decreasing)
     else:
-        if max_increasing_index < max_decreasing_indexes[0]:
+        if max_increasing_index < max_decreasing_index:
             return sum(max_increasing)
         else:
             return sum(max_decreasing)
