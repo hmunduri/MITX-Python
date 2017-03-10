@@ -60,6 +60,8 @@ Python 3 version of the course)
 * [Feb 2017][13]
 
 ## Final
+* [Mar 2017][14]
+
 * Problem 4
 * Problem 5
 * Problem 7
@@ -77,3 +79,4 @@ Python 3 version of the course)
 [11]: problem_set_05/ps6_recursion.py
 [12]: problem_set_06/
 [13]: midterm/feb_2017/
+[14]: final_exam/march_2017/
