@@ -62,10 +62,6 @@ Python 3 version of the course)
 ## Final
 * [Mar 2017][14]
 
-* Problem 4
-* Problem 5
-* Problem 7
-
 [1]: problem_set_01/p_01_counting_vowels.py
 [2]: problem_set_01/p_02_counting_bobs.py
 [3]: problem_set_01/p_03_longest_substring.py
