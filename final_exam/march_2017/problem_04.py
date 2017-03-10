@@ -8,10 +8,8 @@ def longest_run(L):
     Does not modify the list.
     Returns the sum of the longest run.
     """
-    increasing_index = 0
-    decreasing_index = 0
-    max_increasing_index = increasing_index
-    max_decreasing_index = decreasing_index
+    increasing_index = decreasing_index = 0
+    max_increasing_index = max_decreasing_index = 0
     max_increasing = [L[0]]
     max_decreasing = [L[0]]
     increasing = max_increasing[:]
